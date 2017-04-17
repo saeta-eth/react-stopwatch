@@ -1,0 +1,53 @@
+{
+  "name": "react-stopwatch",
+  "version": "1.0.0",
+  "description": "A simple Stopwatch component for ReactJs",
+  "main": "dist/index.js",
+  "scripts": {
+    "cpflow": "find ./src -name '*.js' -not -path '*/__*' | while read filepath; do cp $filepath `echo $filepath | sed 's/\\/src\\//\\/lib\\//g'`.flow; done",
+    "babel": "babel src/ --out-dir dist/",
+    "example": "browserify -t babelify --debug examples/index.js -o examples/bundle.js",
+    "build": "npm run babel && npm run cpflow && npm run example",
+    "prepublish": "npm run build",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slorenzo/react-stopwatch.git"
+  },
+  "keywords": [
+    "React",
+    "ReactJS",
+    "Stopwatch"
+  ],
+  "author": "Sebastian Lorenzo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/slorenzo/react-stopwatch/issues"
+  },
+  "homepage": "https://github.com/slorenzo/react-stopwatch",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^6.1.2",
+    "babel-plugin-syntax-flow": "^6.18.0",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^13.3.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "jest": "^19.0.2",
+    "react": "^15.5.4",
+    "react-addons-test-utils": "^15.5.1",
+    "react-dom": "^15.5.4"
+  }
+}
