@@ -9,7 +9,7 @@ pids
 
 node_modules
 src
-examples
+example
 dist
 
 .DS_Store

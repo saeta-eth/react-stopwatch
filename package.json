@@ -4,11 +4,12 @@
   "description": "A simple Stopwatch component for ReactJs",
   "main": "dist/index.js",
   "scripts": {
-    "cpflow": "find ./src -name '*.js' -not -path '*/__*' | while read filepath; do cp $filepath `echo $filepath | sed 's/\\/src\\//\\/dist\\//g'`.flow; done",
+    "flow": "flow",
     "babel": "babel src/ --out-dir dist/",
-    "example": "browserify -t babelify --debug examples/index.js -o examples/bundle.js",
-    "build": "yarn run babel && npm run cpflow && yarn run example",
+    "example": "browserify -t babelify --debug example/index.js -o example/bundle.js",
+    "build": "yarn run babel && npm run flow && yarn run example",
     "prepublish": "yarn run build",
+    "eslint": "eslint ./src",
     "test": "jest"
   },
   "repository": {
@@ -34,6 +35,9 @@
     "testRegex": "\\.test\\.js$"
   },
   "homepage": "https://github.com/slorenzo/react-stopwatch",
+  "peerDependencies": {
+    "react": "^15.5.4"
+  },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^6.1.2",
@@ -51,7 +55,6 @@
     "eslint-plugin-react": "^6.10.3",
     "flow-bin": "^0.44.1",
     "jest": "^19.0.2",
-    "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.5.4"
   }

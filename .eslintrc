@@ -1,1 +1,12 @@
-{ "extends": "airbnb/base" }
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb/base"],
+  "globals": {
+    "React$Element": false,
+    "ReactClass": false
+  },
+  "rules": {
+    "operator-linebreak": ["error", "before"],
+    "react/prop-types": 0
+  }
+}
