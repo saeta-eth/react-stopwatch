@@ -25,6 +25,14 @@
   "bugs": {
     "url": "https://github.com/slorenzo/react-stopwatch/issues"
   },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/example/"
+    ],
+    "automock": false,
+    "testRegex": "\\.test\\.js$"
+  },
   "homepage": "https://github.com/slorenzo/react-stopwatch",
   "devDependencies": {
     "babel-cli": "^6.24.1",
