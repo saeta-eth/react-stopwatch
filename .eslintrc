@@ -1,12 +1,13 @@
 {
+  "extends": ["airbnb"],
   "parser": "babel-eslint",
-  "extends": ["airbnb/base"],
   "globals": {
     "React$Element": false,
     "ReactClass": false
   },
   "rules": {
     "operator-linebreak": ["error", "before"],
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   }
 }
