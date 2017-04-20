@@ -1709,6 +1709,16 @@ eslint-module-utils@^2.0.0:
     debug "2.2.0"
     pkg-dir "^1.0.0"
 
+eslint-plugin-flow-vars@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-flow-vars/-/eslint-plugin-flow-vars-0.5.0.tgz#a7fb78fd873c86e0e5839df3b3c90d47bc68c6d2"
+
+eslint-plugin-flowtype@^2.32.1:
+  version "2.32.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.32.1.tgz#bbee185dedf97e5f63ec975cdcddd199bd2a2501"
+  dependencies:
+    lodash "^4.15.0"
+
 eslint-plugin-import@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.2.0.tgz#72ba306fad305d67c4816348a4699a4229ac8b4e"
@@ -2924,7 +2934,7 @@ lodash.pickby@^4.0.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.pickby/-/lodash.pickby-4.6.0.tgz#7dea21d8c18d7703a27c704c15d3b84a67e33aff"
 
-lodash@^4.0.0, lodash@^4.14.0, lodash@^4.2.0, lodash@^4.3.0:
+lodash@^4.0.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.2.0, lodash@^4.3.0:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -3375,7 +3385,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.7, prop-types@~15.5.7:
+prop-types@~15.5.7:
   version "15.5.8"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.8.tgz#6b7b2e141083be38c8595aa51fc55775c7199394"
   dependencies:
@@ -3450,15 +3460,6 @@ react-dom@^15.5.4:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
     prop-types "~15.5.7"
-
-react@^15.5.4:
-  version "15.5.4"
-  resolved "https://registry.yarnpkg.com/react/-/react-15.5.4.tgz#fa83eb01506ab237cdc1c8c3b1cea8de012bf047"
-  dependencies:
-    fbjs "^0.8.9"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.0"
-    prop-types "^15.5.7"
 
 read-only-stream@^2.0.0:
   version "2.0.0"
