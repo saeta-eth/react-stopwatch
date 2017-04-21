@@ -1,13 +1,45 @@
 {
-  "extends": ["airbnb"],
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended"
+  ],
   "parser": "babel-eslint",
   "globals": {
     "React$Element": false,
     "ReactClass": false
   },
+  "plugins": [
+    "import",
+    "flowtype"
+  ],
   "rules": {
     "operator-linebreak": ["error", "before"],
+    "import/extensions": 0,
+    "import/no-unresolved": 0,
+    "react/no-unused-prop-types": 0,
+    "react/require-default-props": 0,
     "react/prop-types": 0,
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/sort-comp": [1, {
+      "order": {
+        "lifecyle": [
+          "displayName",
+          "propTypes",
+          "defaultProps",
+          "constructor",
+          "contextTypes",
+          "childContextTypes",
+          "statics",
+          "getChildContext",
+          "componentWillMount",
+          "componentDidMount",
+          "componentWillReceiveProps",
+          "shouldComponentUpdate",
+          "componentWillUpdate",
+          "componentDidUpdate",
+          "componentWillUnmount"
+        ]
+      }
+    }]
   }
 }
