@@ -9,7 +9,7 @@
     "example": "browserify -t babelify --debug example/index.js -o example/bundle.js",
     "build": "yarn run babel && npm run flow && yarn run example",
     "prepublish": "yarn run build",
-    "eslint": "eslint ./src",
+    "eslint": "eslint ./src && eslint ./example",
     "test": "jest"
   },
   "repository": {
