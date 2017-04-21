@@ -1,6 +1,10 @@
 /* @flow */
 
-const fillTextWithFormat = function fillTextWithFormat(hours, minutes, seconds): string {
+const fillTextWithFormat = function fillTextWithFormat(
+  hours: number,
+  minutes: number,
+  seconds: number,
+  ): string {
   let finalHours;
   let finalMinutes;
   let finalSeconds;
@@ -23,4 +27,6 @@ const fillTextWithFormat = function fillTextWithFormat(hours, minutes, seconds):
   return `${finalHours}:${finalMinutes}:${finalSeconds}`;
 };
 
-export default fillTextWithFormat;
+export {
+  fillTextWithFormat,
+};
