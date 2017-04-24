@@ -35,8 +35,9 @@
     "testRegex": "\\.test\\.js$"
   },
   "homepage": "https://github.com/slorenzo/react-stopwatch",
-  "peerDependencies": {
-    "react": "^15.5.4"
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -57,7 +58,8 @@
     "eslint-plugin-react": "^6.10.3",
     "flow-bin": "^0.44.1",
     "jest": "^19.0.2",
-    "react-addons-test-utils": "^15.5.1",
-    "react-dom": "^15.5.4"
+    "lodash": "^4.17.4",
+    "radium": "^0.18.2",
+    "react-addons-test-utils": "^15.5.1"
   }
 }
