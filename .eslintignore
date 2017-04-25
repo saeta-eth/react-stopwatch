@@ -1,1 +1,4 @@
-example/bundle.js
+.git
+node_modules/
+dist/
+example/
