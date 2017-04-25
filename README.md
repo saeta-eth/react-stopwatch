@@ -1,4 +1,6 @@
-# React-Stopwatch
+# react-stopwatch
+
+> A simple Stopwatch component built on React.
 
 ## Installation
 
@@ -12,13 +14,12 @@ or
 npm install react-stopwatch --save
 ```
 
-
 ### Usage
 
 ```js
-import Stopwatch from 'react-stopwatch';
+import React from 'react';
 import ReactDom from 'react-dom';
-import Stopwatch from '../src/index';
+import Stopwatch from 'react-stopwatch';
 
 ReactDom.render(
   <Stopwatch
@@ -41,9 +42,9 @@ There are two themes:
 - `secondary`: The watch has a square shape.
 
 ```js
-import Stopwatch from 'react-stopwatch';
+import React from 'react';
 import ReactDom from 'react-dom';
-import Stopwatch from '../src/index';
+import Stopwatch from 'react-stopwatch';
 
 ReactDom.render(
   <Stopwatch
