@@ -33,12 +33,12 @@ ReactDom.render(
 );
 ```
 
-### Customizacion
+### Customization
 
 
 There are two themes:
-- 'primary': The watch takes a circle way. (Default)
-- 'secondary': The watch takes a square way.
+- `primary`: The watch has a circle shape (Default)
+- `secondary`: The watch has a square shape.
 
 ```js
 import Stopwatch from 'react-stopwatch';
@@ -55,7 +55,7 @@ ReactDom.render(
   document.getElementById('app')
 );
 ```
-If you want to do the watch would appears with you own styles. You just need to put your styles inside of `containerOutter` and `containerInner`.
+If you want to do the watch would appears with your own styles. You just need to put your styles inside of `containerOutter` and `containerInner`.
 
 ```js
 import Stopwatch from 'react-stopwatch';
