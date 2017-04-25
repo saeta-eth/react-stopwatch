@@ -173,7 +173,7 @@ class StopWatch extends Component {
       if (withLoop) {
         this.timer();
       }
-      if (_.isFunction(onCallback)) {
+      if (typeof onCallback === 'function') {
         onCallback();
       }
     }
