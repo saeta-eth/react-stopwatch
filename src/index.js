@@ -32,12 +32,6 @@ class StopWatch extends Component {
       base: {
         fontSize: '18px',
         display: 'inline-block',
-        margin: 'auto',
-        top: '0',
-        right: '0',
-        bottom: '0',
-        left: '0',
-        position: 'absolute',
         height: '150px',
         width: '150px',
       },
@@ -46,6 +40,12 @@ class StopWatch extends Component {
           background: '#0f222b',
           borderRadius: '50%',
           border: '2px solid #8bc34a',
+          margin: 'auto',
+          top: '0',
+          right: '0',
+          bottom: '0',
+          left: '0',
+          position: 'absolute',
         },
         containerInner: {
           color: '#69ca62',
@@ -57,6 +57,12 @@ class StopWatch extends Component {
         containerOutter: {
           background: '#122129',
           border: '2px solid #8bc34a',
+          margin: 'auto',
+          top: '0',
+          right: '0',
+          bottom: '0',
+          left: '0',
+          position: 'absolute',
         },
         containerInner: {
           color: '#2dba77',
