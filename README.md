@@ -61,7 +61,7 @@ If you want to do the watch would appears with your own styles. You just need to
 ```js
 import Stopwatch from 'react-stopwatch';
 import ReactDom from 'react-dom';
-import Stopwatch from '../src/index';
+import Stopwatch from 'react-stopwatch';
 
 const styles = {
   containerOutter: {
