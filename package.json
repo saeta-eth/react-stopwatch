@@ -1,6 +1,6 @@
 {
   "name": "react-stopwatch",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple Stopwatch component for React",
   "main": "dist/index.js",
   "scripts": {

@@ -11,3 +11,7 @@
 ## 1.0.2
 
 * Improved styles themes
+
+## 1.0.3
+
+* Fixed path in example section
