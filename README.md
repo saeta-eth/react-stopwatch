@@ -78,7 +78,7 @@ ReactDom.render(
     seconds={0}
     minutes={0}
     hours={0}
-    styles={styles}
+    custom={styles}
    />,
   document.getElementById('app')
 );
