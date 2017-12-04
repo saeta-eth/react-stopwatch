@@ -3,10 +3,10 @@
 > A simple Stopwatch component built on React.
 
 Primary theme:
-![](http://gph.is/2AObS2z)
+![circle](media/circle.gif)
 
 Secondary theme:
-![](http://gph.is/2AKVnV7)
+![square](media/square.gif)
 
 
 ## Installation
