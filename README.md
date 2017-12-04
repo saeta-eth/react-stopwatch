@@ -2,6 +2,13 @@
 
 > A simple Stopwatch component built on React.
 
+Primary theme:
+![](http://gph.is/2AObS2z)
+
+Secondary theme:
+![](http://gph.is/2AKVnV7)
+
+
 ## Installation
 
 First, install the component:
