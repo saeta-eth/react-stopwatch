@@ -2,12 +2,9 @@
 
 > A simple Stopwatch component built on React.
 
-Primary theme:
-![circle](media/circle.gif)
-
-Secondary theme:
-![square](media/square.gif)
-
+<p align="center">
+  <img src="https://github.com/slorenzo/react-stopwatch/blob/master/media/square.gif?raw=true" alt="Demo"/>
+</p>
 
 ## Installation
 
