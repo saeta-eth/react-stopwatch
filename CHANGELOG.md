@@ -15,3 +15,7 @@
 ## 1.0.3
 
 * Fixed path in example section
+
+## 1.1.0
+
+* Migrate to React 16
