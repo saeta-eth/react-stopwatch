@@ -1,32 +1,12 @@
  /* @flow */
 
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Radium from 'radium';
 import _ from 'lodash';
 import { fillTextWithFormat } from './utils';
+import type { Props, State } from './types';
 
-type Props = {
-  seconds: number,
-  minutes: number,
-  hours: number,
-  theme: 'primary' | 'secondary',
-  limit?: string,
-  withLoop?: boolean,
-  defaultStyles: any,
-  custom: any,
-  onCallback?: any,
-};
-
-type State = {
-  text: string,
-  stateHours: number,
-  stateMinutes: number,
-  stateSeconds: number,
-  intervalId: number
-};
-
-class StopWatch extends Component {
+class StopWatch extends Component<Props, State> {
   static defaultProps = {
     defaultStyles: {
       base: {
@@ -70,13 +50,13 @@ class StopWatch extends Component {
           lineHeight: '5',
         },
       },
-      custom: {},
     },
+    custom: {},
     theme: 'primary',
     withLoop: false,
+    onCallback: () => {},
   };
-  props: Props;
-  state: State;
+  intervalId: IntervalID;
 
   constructor(props: Props): void {
     super(props);
@@ -89,21 +69,21 @@ class StopWatch extends Component {
 
     const text: string = fillTextWithFormat(hours, minutes, seconds);
 
+    this.intervalId = setInterval(() => {}, Number.MAX_VALUE);
     this.state = {
       text,
       stateHours: hours,
       stateMinutes: minutes,
       stateSeconds: seconds,
-      intervalId: 0,
     };
   }
 
   componentWillReceiveProps(): void {
+    this.intervalId = setInterval(() => {}, Number.MAX_VALUE);
     this.setState({
       stateHours: 0,
       stateMinutes: 0,
       stateSeconds: 0,
-      intervalId: 0,
     });
   }
 
@@ -122,11 +102,7 @@ class StopWatch extends Component {
       seconds,
     } = this.props;
 
-    const {
-      intervalId,
-    } = this.state;
-
-    clearInterval(intervalId);
+    clearInterval(this.intervalId);
 
     const text: string = fillTextWithFormat(hours, minutes, seconds);
 
@@ -135,7 +111,6 @@ class StopWatch extends Component {
       stateHours: hours,
       stateMinutes: minutes,
       stateSeconds: seconds,
-      intervalId: 0,
     });
   }
 
@@ -152,19 +127,20 @@ class StopWatch extends Component {
       stateSeconds,
     } = this.state;
 
-    this.setState({
-      stateSeconds: stateSeconds + 1,
-    });
+    this.setState(prevState => ({
+      stateSeconds: prevState.stateSeconds + 1,
+    }));
     if (stateSeconds >= 60) {
-      this.setState({
+      this.setState(prevState => ({
         stateSeconds: 0,
-        stateMinutes: stateMinutes + 1,
-      });
+        stateMinutes: prevState.stateMinutes + 1,
+      }));
+
       if (stateMinutes >= 60) {
-        this.setState({
+        this.setState(prevState => ({
           stateMinutes: 0,
-          stateHours: stateHours + 1,
-        });
+          stateHours: prevState.stateHours + 1,
+        }));
       }
     }
 
@@ -179,24 +155,20 @@ class StopWatch extends Component {
       if (withLoop) {
         this.timer();
       }
-      if (typeof onCallback === 'function') {
-        onCallback();
-      }
+      onCallback();
     }
   }
 
   timer(): void {
-    // TODO: setInterval return a number.
-    const intervalId = setInterval(() => {
+    // @slorenzo: setInterval return a number.
+    const intervalId: IntervalID = setInterval(() => {
       this.counter();
     }, 1000);
 
-    this.setState({
-      intervalId,
-    });
+    this.intervalId = intervalId;
   }
 
-  render(): ?React$Element<*> {
+  render() {
     const {
       defaultStyles,
       theme,
