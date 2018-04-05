@@ -17,3 +17,6 @@ dist
 logs
 *.log
 
+# Coverage
+coverage
+
