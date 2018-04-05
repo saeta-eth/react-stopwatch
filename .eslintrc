@@ -1,13 +1,10 @@
 {
   "extends": [
     "airbnb",
-    "plugin:flowtype/recommended"
+    "plugin:flowtype/recommended",
+    "plugin:jest/recommended"
   ],
   "parser": "babel-eslint",
-  "globals": {
-    "React$Element": false,
-    "ReactClass": false
-  },
   "plugins": [
     "import",
     "flowtype"
