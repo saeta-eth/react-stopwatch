@@ -63,7 +63,7 @@ ReactDom.render(
 If you want to do the watch would appears with your own styles. You just need to put your styles inside of `containerOutter` and `containerInner`.
 
 ```js
-import Stopwatch from 'react-stopwatch';
+import React from 'react';
 import ReactDom from 'react-dom';
 import Stopwatch from 'react-stopwatch';
 
@@ -106,4 +106,4 @@ ReactDom.render(
 
 ## License
 
-MIT license. Copyright © 2017.
+MIT license. Copyright © 2018.
