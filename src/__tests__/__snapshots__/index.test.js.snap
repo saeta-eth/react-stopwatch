@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stopwatch renders correctly 1`] = `
+<div
+  data-radium={true}
+  style={
+    Object {
+      "background": "#0f222b",
+      "border": "2px solid #8bc34a",
+      "borderRadius": "50%",
+      "bottom": "0",
+      "display": "inline-block",
+      "fontSize": "18px",
+      "height": "150px",
+      "left": "0",
+      "margin": "auto",
+      "position": "absolute",
+      "right": "0",
+      "top": "0",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    data-radium={true}
+    style={
+      Object {
+        "color": "#69ca62",
+        "lineHeight": "5",
+        "textAlign": "center",
+      }
+    }
+  >
+    <h3>
+      00:00:00
+    </h3>
+  </div>
+</div>
+`;
