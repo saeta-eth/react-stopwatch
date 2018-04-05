@@ -1,13 +1,15 @@
 [ignore]
-.*/node_modules/fbjs/.*
+.*/node_modules/*
 
 [include]
+<PROJECT_ROOT>/flow-typed
 
 [libs]
 
 [options]
 esproposal.class_static_fields=enable
 esproposal.class_instance_fields=enable
+unsafe.enable_getters_and_setters=true
 traces=3
 strip_root=true
 esproposal.decorators=ignore
