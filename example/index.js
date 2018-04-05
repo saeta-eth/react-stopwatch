@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
 import Stopwatch from '../src/index';
 
 const styles = {
@@ -14,7 +14,7 @@ const styles = {
   }
 }
 
-ReactDom.render(
+ReactDOM.render(
   <Stopwatch
     seconds={0}
     minutes={0}
