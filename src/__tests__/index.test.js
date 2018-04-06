@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import Stopwatch from '../';
 
@@ -18,7 +17,7 @@ describe('Stopwatch', () => {
     expect(stopwatch.toJSON()).toMatchSnapshot();
   });
 
-  it('start to works', (done) => {
+  it('should start to works', (done) => {
     const stopwatch = renderer.create(<Stopwatch
       seconds={0}
       minutes={0}
@@ -38,10 +37,10 @@ describe('Stopwatch', () => {
     setTimeout(() => {
       expect(stopwatchInstance.state.stateSeconds).toBe(1);
       done();
-    }, 1500);
+    }, 1100);
   });
 
-  it('onCallback is called ', (done) => {
+  it('should call to onCallback function', (done) => {
     const onFinish = () => {
       expect(true).toBe(true);
       done();
@@ -52,12 +51,12 @@ describe('Stopwatch', () => {
       minutes={0}
       hours={0}
       limit="00:00:03"
-      withLoop
+      withLoop={false}
       onCallback={onFinish}
     />);
   });
 
-  it('withLoop is false ', (done) => {
+  it('should dont make a loop if withLoop is false ', (done) => {
     const stopwatch = renderer.create(<Stopwatch
       seconds={0}
       minutes={0}
@@ -73,18 +72,19 @@ describe('Stopwatch', () => {
     }, 2100);
   });
 
-  it('1 minute', (done) => {
+  it('should change to 1 minute', (done) => {
     const stopwatch = renderer.create(<Stopwatch
       seconds={58}
       minutes={0}
       hours={0}
-      limit="00:01:01"
+      limit="00:01:00"
+      withLoop={false}
     />);
 
     const stopwatchInstance = stopwatch.getInstance();
     setTimeout(() => {
       expect(stopwatchInstance.state.stateMinutes).toBe(1);
       done();
-    }, 3500);
+    }, 2100);
   });
 });
