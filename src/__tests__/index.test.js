@@ -87,4 +87,20 @@ describe('Stopwatch', () => {
       done();
     }, 2100);
   });
+
+  it('should change to 1 hour', (done) => {
+    const stopwatch = renderer.create(<Stopwatch
+      seconds={58}
+      minutes={59}
+      hours={0}
+      limit="01:00:00"
+      withLoop={false}
+    />);
+
+    const stopwatchInstance = stopwatch.getInstance();
+    setTimeout(() => {
+      expect(stopwatchInstance.state.stateHours).toBe(1);
+      done();
+    }, 2100);
+  });
 });
