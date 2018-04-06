@@ -19,3 +19,8 @@
 ## 1.1.0
 
 * Migrate to React 16
+
+## 1.1.1
+
+* Limit is inclusive
+* Added hour test
