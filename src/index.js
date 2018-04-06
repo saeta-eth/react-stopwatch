@@ -96,22 +96,7 @@ class StopWatch extends Component<Props, State> {
   }
 
   stopToCount() {
-    const {
-      hours,
-      minutes,
-      seconds,
-    } = this.props;
-
     clearInterval(this.intervalId);
-
-    const text: string = fillTextWithFormat(hours, minutes, seconds);
-
-    this.setState({
-      text,
-      stateHours: hours,
-      stateMinutes: minutes,
-      stateSeconds: seconds,
-    });
   }
 
   counter(): void {
@@ -130,13 +115,13 @@ class StopWatch extends Component<Props, State> {
     this.setState(prevState => ({
       stateSeconds: prevState.stateSeconds + 1,
     }));
-    if (stateSeconds >= 60) {
+    if (stateSeconds >= 59) {
       this.setState(prevState => ({
         stateSeconds: 0,
         stateMinutes: prevState.stateMinutes + 1,
       }));
 
-      if (stateMinutes >= 60) {
+      if (stateMinutes >= 59) {
         this.setState(prevState => ({
           stateMinutes: 0,
           stateHours: prevState.stateHours + 1,
@@ -151,11 +136,13 @@ class StopWatch extends Component<Props, State> {
     });
 
     if (limit === text) {
-      this.stopToCount();
-      if (withLoop) {
-        this.timer();
-      }
-      onCallback();
+      setTimeout(() => {
+        this.stopToCount();
+        if (withLoop) {
+          this.timer();
+        }
+        onCallback();
+      }, 0);
     }
   }
 
