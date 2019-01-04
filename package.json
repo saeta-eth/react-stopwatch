@@ -72,7 +72,7 @@
     "react-test-renderer": "^16.3.1"
   },
   "dependencies": {
-    "lodash": "^4.17.5",
+    "lodash.defaults": "^4.2.0",
     "radium": "^0.24.0"
   }
 }

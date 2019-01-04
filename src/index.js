@@ -1,8 +1,8 @@
- /* @flow */
+/* @flow */
 
 import React, { Component } from 'react';
 import Radium from 'radium';
-import _ from 'lodash';
+import defaults from 'lodash.defaults';
 import { fillTextWithFormat } from './utils';
 import type { Props, State } from './types';
 
@@ -166,7 +166,7 @@ class StopWatch extends Component<Props, State> {
       text,
     } = this.state;
 
-    const custumStyles = _.defaults(custom, {
+    const custumStyles = defaults(custom, {
       containerOutter: {},
       containerInner: {},
     });
