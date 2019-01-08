@@ -1,6 +1,8 @@
 # react-stopwatch
 
-> A simple Stopwatch component built on React.
+> A Stopwatch Component built on top of React.
+
+[![Travis][build-badge]][build] [![npm package][npm-badge]][npm] [![Coveralls][codecov-badge]][codecov]
 
 <p align="center">
   <img src="https://github.com/slorenzo/react-stopwatch/blob/master/media/square.gif?raw=true" alt="Demo"/>
@@ -21,71 +23,38 @@ npm install react-stopwatch --save
 ### Usage
 
 ```js
-import React from 'react';
-import ReactDom from 'react-dom';
-import Stopwatch from 'react-stopwatch';
+import * as React from 'react';
+import ReactStopwatch from 'react-stopwatch';
 
-ReactDom.render(
-  <Stopwatch
+const Stopwatch = () => (
+  <ReactStopwatch
     seconds={0}
     minutes={0}
     hours={0}
-    limit={"00:00:10"}
-    withLoop={true}
+    limit="00:00:10"
     onCallback={() => console.log('Finish')}
-   />,
-  document.getElementById('app')
+    render={({ formatted, hours, minutes, seconds }) => {
+      return (
+        <div>
+          <p>
+            Formatted: { formatted }
+          </p>
+          <p>
+            Hours: { hours }
+          </p>
+          <p>
+            Minutes: { minutes }
+          </p>
+          <p>
+            Seconds: { seconds }
+          </p>
+        </div>
+      );
+    }}
+   />
 );
-```
 
-### Customization
-
-
-There are two themes:
-- `primary`: The watch has a circle shape (Default)
-- `secondary`: The watch has a square shape.
-
-```js
-import React from 'react';
-import ReactDom from 'react-dom';
-import Stopwatch from 'react-stopwatch';
-
-ReactDom.render(
-  <Stopwatch
-    seconds={0}
-    minutes={0}
-    hours={0}
-    theme='primary' // theme='secondary'
-   />,
-  document.getElementById('app')
-);
-```
-If you want to do the watch would appears with your own styles. You just need to put your styles inside of `containerOutter` and `containerInner`.
-
-```js
-import React from 'react';
-import ReactDom from 'react-dom';
-import Stopwatch from 'react-stopwatch';
-
-const styles = {
-  containerOutter: {
-    width: '250px',
-    height: '250px'
-  },
-  containerInner: {
-    lineHeight: '10'
-  }
-}
-
-ReactDom.render(
-  <Stopwatch
-    seconds={0}
-    minutes={0}
-    hours={0}
-    custom={styles}
-   />,
-  document.getElementById('app')
-);
+export default Stopwatch;
 ```
 
 ### Properties
@@ -107,3 +76,12 @@ ReactDom.render(
 ## License
 
 MIT license. Copyright © 2018.
+
+[build-badge]: https://travis-ci.org/slorenzo/react-stopwatch.svg?branch=master
+[build]: https://travis-ci.org/slorenzo/react-stopwatch
+
+[npm-badge]: https://img.shields.io/npm/v/react-stopwatch.svg
+[npm]: https://www.npmjs.org/package/react-stopwatch
+
+[codecov-badge]: https://codecov.io/gh/slorenzo/react-stopwatch/branch/master/graph/badge.svg
+[codecov]: https://codecov.io/gh/slorenzo/react-stopwatch
