@@ -4,12 +4,11 @@ export type Props = {
   seconds: number,
   minutes: number,
   hours: number,
-  theme: 'primary' | 'secondary',
   limit?: string,
   withLoop: boolean,
-  defaultStyles: any,
-  custom: any,
   onCallback: () => void,
+  render: any,
+  children: any,
 };
 
 export type State = {
