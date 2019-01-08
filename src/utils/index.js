@@ -4,7 +4,7 @@ const fillTextWithFormat = function fillTextWithFormat(
   hours: number,
   minutes: number,
   seconds: number,
-  ): string {
+): string {
   let finalHours;
   let finalMinutes;
   let finalSeconds;
@@ -27,6 +27,4 @@ const fillTextWithFormat = function fillTextWithFormat(
   return `${finalHours}:${finalMinutes}:${finalSeconds}`;
 };
 
-export {
-  fillTextWithFormat,
-};
+export { fillTextWithFormat };
