@@ -1,39 +1,107 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Stopwatch renders correctly 1`] = `
-<div
-  data-radium={true}
-  style={
-    Object {
-      "background": "#0f222b",
-      "border": "2px solid #8bc34a",
-      "borderRadius": "50%",
-      "bottom": "0",
-      "display": "inline-block",
-      "fontSize": "18px",
-      "height": "150px",
-      "left": "0",
-      "margin": "auto",
-      "position": "absolute",
-      "right": "0",
-      "top": "0",
-      "width": "150px",
-    }
-  }
->
-  <div
-    data-radium={true}
-    style={
-      Object {
-        "color": "#69ca62",
-        "lineHeight": "5",
-        "textAlign": "center",
-      }
-    }
+exports[`ReactStopwatch It renders without breaking using render as children elements 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ReactStopWatch
+    hours={0}
+    limit="00:00:10"
+    minutes={0}
+    onCallback={[Function]}
+    render={[Function]}
+    seconds={0}
+    withLoop={true}
   >
-    <h3>
-      00:00:00
-    </h3>
-  </div>
-</div>
+    [Function]
+  </ReactStopWatch>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {},
+    "ref": null,
+    "rendered": null,
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {},
+      "ref": null,
+      "rendered": null,
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`ReactStopwatch It renders without breaking using render as property 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ReactStopWatch
+    hours={0}
+    limit="00:00:10"
+    minutes={0}
+    onCallback={[Function]}
+    render={[Function]}
+    seconds={0}
+    withLoop={true}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): undefined,
+  Symbol(enzyme.__nodes__): Array [
+    undefined,
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
 `;

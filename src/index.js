@@ -1,61 +1,17 @@
- /* @flow */
+/* @flow */
 
-import React, { Component } from 'react';
-import Radium from 'radium';
-import _ from 'lodash';
+import { PureComponent } from 'react';
 import { fillTextWithFormat } from './utils';
 import type { Props, State } from './types';
 
-class StopWatch extends Component<Props, State> {
+class ReactStopWatch extends PureComponent<Props, State> {
+  static displayName = 'ReactStopWatch';
+
   static defaultProps = {
-    defaultStyles: {
-      base: {
-        fontSize: '18px',
-        display: 'inline-block',
-        height: '150px',
-        width: '150px',
-      },
-      primary: {
-        containerOutter: {
-          background: '#0f222b',
-          borderRadius: '50%',
-          border: '2px solid #8bc34a',
-          margin: 'auto',
-          top: '0',
-          right: '0',
-          bottom: '0',
-          left: '0',
-          position: 'absolute',
-        },
-        containerInner: {
-          color: '#69ca62',
-          textAlign: 'center',
-          lineHeight: '5',
-        },
-      },
-      secondary: {
-        containerOutter: {
-          background: '#122129',
-          border: '2px solid #8bc34a',
-          margin: 'auto',
-          top: '0',
-          right: '0',
-          bottom: '0',
-          left: '0',
-          position: 'absolute',
-        },
-        containerInner: {
-          color: '#2dba77',
-          textAlign: 'center',
-          lineHeight: '5',
-        },
-      },
-    },
-    custom: {},
-    theme: 'primary',
     withLoop: false,
     onCallback: () => {},
   };
+
   intervalId: IntervalID;
 
   constructor(props: Props): void {
@@ -67,11 +23,11 @@ class StopWatch extends Component<Props, State> {
       seconds,
     } = props;
 
-    const text: string = fillTextWithFormat(hours, minutes, seconds);
+    const formatted: string = fillTextWithFormat(hours, minutes, seconds);
 
     this.intervalId = setInterval(() => {}, Number.MAX_VALUE);
     this.state = {
-      text,
+      formatted,
       stateHours: hours,
       stateMinutes: minutes,
       stateSeconds: seconds,
@@ -115,6 +71,7 @@ class StopWatch extends Component<Props, State> {
     this.setState(prevState => ({
       stateSeconds: prevState.stateSeconds + 1,
     }));
+
     if (stateSeconds >= 59) {
       this.setState(prevState => ({
         stateSeconds: 0,
@@ -129,13 +86,11 @@ class StopWatch extends Component<Props, State> {
       }
     }
 
-    const text: string = fillTextWithFormat(stateHours, stateMinutes, stateSeconds);
+    const formatted: string = fillTextWithFormat(stateHours, stateMinutes, stateSeconds);
 
-    this.setState({
-      text,
-    });
+    this.setState({ formatted });
 
-    if (limit === text) {
+    if (limit === formatted) {
       setTimeout(() => {
         this.stopToCount();
         if (withLoop) {
@@ -147,7 +102,6 @@ class StopWatch extends Component<Props, State> {
   }
 
   timer(): void {
-    // @slorenzo: setInterval return a number.
     const intervalId: IntervalID = setInterval(() => {
       this.counter();
     }, 1000);
@@ -155,41 +109,43 @@ class StopWatch extends Component<Props, State> {
     this.intervalId = intervalId;
   }
 
+
   render() {
-    const {
-      defaultStyles,
-      theme,
-      custom,
-    } = this.props;
+    const { children, render } = this.props;
 
     const {
-      text,
+      formatted,
+      stateHours: hours,
+      stateMinutes: minutes,
+      stateSeconds: seconds,
     } = this.state;
 
-    const custumStyles = _.defaults(custom, {
-      containerOutter: {},
-      containerInner: {},
-    });
+    if (children) {
+      return children({
+        formatted,
+        hours,
+        minutes,
+        seconds,
+      });
+    }
 
-    return (
-      <div
-        style={[
-          defaultStyles.base,
-          defaultStyles[theme].containerOutter,
-          custumStyles.containerOutter,
-        ]}
-      >
-        <div
-          style={[
-            defaultStyles[theme].containerInner,
-            custumStyles.containerInner,
-          ]}
-        >
-          <h3>{text}</h3>
-        </div>
-      </div>
+    if (render) {
+      return render({
+        formatted,
+        hours,
+        minutes,
+        seconds,
+      });
+    }
+
+    // eslint-disable-next-line
+    console.error(
+      'Component ReactStopWatch:',
+      'no children or render prop are present',
     );
+
+    return null;
   }
 }
 
-export default Radium(StopWatch);
+export default ReactStopWatch;

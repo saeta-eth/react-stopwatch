@@ -8,7 +8,7 @@ pids
 *.seed
 
 node_modules
-example/bundle.js
+example
 dist
 
 .DS_Store
@@ -20,3 +20,5 @@ logs
 # Coverage
 coverage
 
+#
+.cache
