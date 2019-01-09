@@ -1,7 +1,7 @@
-
 import React from 'react';
+import ms from 'ms';
 import Enzyme, { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16'
+import Adapter from 'enzyme-adapter-react-16';
 import Stopwatch from '..';
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -67,7 +67,7 @@ describe('ReactStopwatch', () => {
     setTimeout(() => {
       expect(wrapper.state().stateSeconds).toBe(1);
       done();
-    }, 1100);
+    }, ms('1.1s'));
   });
 
   it('should call to onCallback function', (done) => {
@@ -104,7 +104,7 @@ describe('ReactStopwatch', () => {
     setTimeout(() => {
       expect(wrapper.state().stateSeconds).toBe(2);
       done();
-    }, 2100);
+    }, ms('2.1s'));
   });
 
   it('should change to 1 minute', (done) => {
@@ -120,7 +120,7 @@ describe('ReactStopwatch', () => {
     setTimeout(() => {
       expect(wrapper.state().stateMinutes).toBe(1);
       done();
-    }, 2100);
+    }, ms('2.1s'));
   });
 
   it('should change to 1 hour', (done) => {
@@ -138,6 +138,6 @@ describe('ReactStopwatch', () => {
     setTimeout(() => {
       expect(wrapper.state().stateHours).toBe(1);
       done();
-    }, 2100);
+    }, ms('2.1s'));
   });
 });

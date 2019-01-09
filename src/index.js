@@ -1,6 +1,7 @@
 /* @flow */
 
 import { PureComponent } from 'react';
+import ms from 'ms';
 import { fillTextWithFormat } from './utils';
 import type { Props, State } from './types';
 
@@ -104,7 +105,7 @@ class ReactStopWatch extends PureComponent<Props, State> {
   timer(): void {
     const intervalId: IntervalID = setInterval(() => {
       this.counter();
-    }, 1000);
+    }, ms('1s'));
 
     this.intervalId = intervalId;
   }
