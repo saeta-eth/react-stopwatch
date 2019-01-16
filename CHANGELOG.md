@@ -24,3 +24,12 @@
 
 * Limit is inclusive
 * Added hour test
+
+## v2.0.0
+
+* Remove all related to styles
+* Use Render Props pattern
+
+## v2.0.1
+
+* Fixed package.json
