@@ -32,6 +32,9 @@ const Stopwatch = () => (
     minutes={0}
     hours={0}
     limit="00:00:10"
+    onChange={({ hours, minutes, seconds }) => {
+      // do something
+    }}
     onCallback={() => console.log('Finish')}
     render={({ formatted, hours, minutes, seconds }) => {
       return (
@@ -64,6 +67,7 @@ export default Stopwatch;
 - `limit`: String. Need to have the following format `XX:XX:XX`. (Optional)
 - `withLoop`: Boolean. If it is `true` when the watch is equal to `limit`, it makes a loop. (Optional)
 - `onCallback`: Function. If you need to do something when the watch is equal to `limit`. (Optional)
+- `onChange`: Function. It returns the values each second. (Optional)
 
 
 
