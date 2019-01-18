@@ -1,6 +1,6 @@
 {
   "name": "react-stopwatch",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "React Stopwatch component using Render Props",
   "main": "dist/react-stopwatch.js",
   "umd:main": "dist/react-stopwatch.umd.js",

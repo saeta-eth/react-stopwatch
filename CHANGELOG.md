@@ -33,3 +33,7 @@
 ## v2.0.1
 
 * Fixed package.json
+
+## v2.0.2
+
+* Added onChange property

@@ -11,6 +11,7 @@ class ReactStopWatch extends PureComponent<Props, State> {
   static defaultProps = {
     withLoop: false,
     onCallback: () => {},
+    onChange: () => {},
   };
 
   intervalId: IntervalID;
@@ -61,6 +62,7 @@ class ReactStopWatch extends PureComponent<Props, State> {
       limit,
       withLoop,
       onCallback,
+      onChange,
     } = this.props;
 
     const {
@@ -90,6 +92,12 @@ class ReactStopWatch extends PureComponent<Props, State> {
     const formatted: string = fillTextWithFormat(stateHours, stateMinutes, stateSeconds);
 
     this.setState({ formatted });
+
+    onChange({
+      hours: stateHours,
+      minutes: stateMinutes,
+      seconds: stateSeconds,
+    });
 
     if (limit === formatted) {
       setTimeout(() => {
