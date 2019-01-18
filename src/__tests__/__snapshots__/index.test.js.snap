@@ -8,6 +8,7 @@ ShallowWrapper {
     limit="00:00:10"
     minutes={0}
     onCallback={[Function]}
+    onChange={[Function]}
     render={[Function]}
     seconds={0}
     withLoop={true}
@@ -70,6 +71,7 @@ ShallowWrapper {
     limit="00:00:10"
     minutes={0}
     onCallback={[Function]}
+    onChange={[Function]}
     render={[Function]}
     seconds={0}
     withLoop={true}

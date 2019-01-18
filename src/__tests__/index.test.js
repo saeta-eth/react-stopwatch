@@ -71,7 +71,7 @@ describe('ReactStopwatch', () => {
   });
 
   it('should call to onCallback function', (done) => {
-    const onFinish = () => {
+    const handleCallback = () => {
       expect(true).toBe(true);
       done();
     };
@@ -83,7 +83,26 @@ describe('ReactStopwatch', () => {
         hours={0}
         limit="00:00:03"
         withLoop={false}
-        onCallback={onFinish}
+        onCallback={handleCallback}
+        render={noop}
+      />,
+    );
+  });
+
+  it('should call to onChange function', (done) => {
+    const handleChange = () => {
+      expect(true).toBe(true);
+      done();
+    };
+
+    shallow(
+      <Stopwatch
+        seconds={0}
+        minutes={0}
+        hours={0}
+        limit="00:00:03"
+        withLoop={false}
+        onChange={handleChange}
         render={noop}
       />,
     );
