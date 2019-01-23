@@ -66,6 +66,7 @@ export default Stopwatch;
 - `hours`: Integer. Needs to be `0 >= hours`. (Required)
 - `limit`: String. Need to have the following format `XX:XX:XX`. (Optional)
 - `withLoop`: Boolean. If it is `true` when the watch is equal to `limit`, it makes a loop. (Optional)
+- `autoStart`: Boolean. Start counting time. Default: true (Optional)
 - `onCallback`: Function. If you need to do something when the watch is equal to `limit`. (Optional)
 - `onChange`: Function. It returns the values each second. (Optional)
 

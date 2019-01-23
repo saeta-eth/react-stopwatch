@@ -37,3 +37,7 @@
 ## v2.0.2
 
 * Added onChange property
+
+## v2.0.3
+
+* Added autoStart property
