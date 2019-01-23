@@ -4,6 +4,7 @@ exports[`ReactStopwatch It renders without breaking using render as children ele
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ReactStopWatch
+    autoStart={true}
     hours={0}
     limit="00:00:10"
     minutes={0}
@@ -67,6 +68,7 @@ exports[`ReactStopwatch It renders without breaking using render as property 1`]
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ReactStopWatch
+    autoStart={true}
     hours={0}
     limit="00:00:10"
     minutes={0}

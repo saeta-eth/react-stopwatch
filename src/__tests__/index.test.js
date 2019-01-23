@@ -70,6 +70,28 @@ describe('ReactStopwatch', () => {
     }, ms('1.1s'));
   });
 
+  it('should not auto start', (done) => {
+    const wrapper = shallow(
+      <Stopwatch
+        seconds={0}
+        minutes={0}
+        hours={0}
+        autoStart={false}
+        limit="00:00:10"
+        render={noop}
+      />,
+    );
+
+    expect(wrapper.state().stateHours).toBe(0);
+    expect(wrapper.state().stateHours).toBe(0);
+    expect(wrapper.state().stateMinutes).toBe(0);
+
+    setTimeout(() => {
+      expect(wrapper.state().stateSeconds).toBe(0);
+      done();
+    }, ms('1.1s'));
+  });
+
   it('should call to onCallback function', (done) => {
     const handleCallback = () => {
       expect(true).toBe(true);

@@ -5,6 +5,7 @@ export type Props = {
   minutes: number,
   hours: number,
   limit?: string,
+  autoStart?: boolean,
   withLoop?: boolean,
   onChange?: () => void,
   onCallback: () => void,

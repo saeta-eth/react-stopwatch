@@ -9,6 +9,7 @@ class ReactStopWatch extends PureComponent<Props, State> {
   static displayName = 'ReactStopWatch';
 
   static defaultProps = {
+    autoStart: true,
     withLoop: false,
     onCallback: () => {},
     onChange: () => {},
@@ -46,7 +47,10 @@ class ReactStopWatch extends PureComponent<Props, State> {
   }
 
   componentDidMount(): void {
-    this.timer();
+    const { autoStart } = this.props;
+    if (autoStart) {
+      this.timer();
+    }
   }
 
   componentWillUnmount(): void {
