@@ -54,7 +54,7 @@
   },
   "homepage": "https://github.com/slorenzo/react-stopwatch",
   "peerDependencies": {
-    "react": "^16.7.0"
+    "react": "^16.8.6"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -71,8 +71,8 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
-    "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.7.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^5.12.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-flow-vars": "^0.5.0",
@@ -81,14 +81,14 @@
     "eslint-plugin-jest": "^22.1.2",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.12.3",
-    "flow-bin": "^0.89.0",
-    "jest": "^23.6.0",
-    "microbundle": "^0.9.0",
-    "parcel-bundler": "^1.11.0",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "flow-bin": "^0.103.0",
+    "jest": "^24.8.0",
+    "microbundle": "^0.11.0",
+    "parcel-bundler": "^1.12.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "dependencies": {
-    "ms": "^2.1.1"
+    "ms": "^2.1.2"
   }
 }
