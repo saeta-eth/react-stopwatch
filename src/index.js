@@ -115,6 +115,8 @@ class ReactStopWatch extends PureComponent<Props, State> {
   }
 
   timer(): void {
+    this.counter();
+
     const intervalId: IntervalID = setInterval(() => {
       this.counter();
     }, ms('1s'));
