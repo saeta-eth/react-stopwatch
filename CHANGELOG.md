@@ -41,3 +41,8 @@
 ## v2.0.3
 
 * Added autoStart property
+
+## v2.0.4
+
+* Fixed timer delay
+* Upgraded some dependencies
